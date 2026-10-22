@@ -1,0 +1,31 @@
+/* Paneles laterales telemetría (doble borde + clip neón).
+   @author Cristian Deysdayr Jimenez @created 2026-10-15 */
+.panel {
+  position: relative; padding: 14px 16px;
+  background: linear-gradient(165deg, var(--panel-2), var(--panel) 70%);
+  border: 1px solid rgba(0, 232, 208, .5);
+  clip-path: var(--cut);
+  box-shadow: var(--glow), var(--neo-out), var(--neo-in);
+}
+.panel::before {
+  content: ""; position: absolute; inset: 5px; pointer-events: none;
+  border: 1px solid rgba(0, 232, 208, .22); clip-path: inherit;
+}
+.panel h2 {
+  margin: 0 0 12px; color: var(--cyan);
+  font: 700 11px/1 Orbitron, sans-serif; letter-spacing: .16em;
+}
+.status {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 10px; font-size: 17px; font-weight: 700;
+}
+.status strong { color: var(--green); }
+.kv { list-style: none; margin: 0; padding: 0; }
+.kv li {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 0; border-bottom: 1px solid rgba(0, 232, 208, .12);
+  font-size: 15px;
+}
+.kv li:last-child { border-bottom: 0; }
+.kv span { color: var(--mute); }
+.kv b { margin-left: auto; color: var(--green); font-weight: 700; }

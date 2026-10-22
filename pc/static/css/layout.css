@@ -1,0 +1,55 @@
+/* Layout minimal: header + cámara full + pad.
+   @author Cristian Deysdayr Jimenez @created 2026-10-15 */
+.shell {
+  width: min(1200px, 100%); margin: 0 auto; padding: 14px;
+  display: grid; gap: 14px; min-height: 100vh; align-content: start;
+}
+.bar {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; padding: 12px 16px;
+  background: linear-gradient(180deg, #0c1822, #070e16);
+  border: 1px solid var(--cyan-dim); box-shadow: var(--glow), var(--neo-out);
+  border-radius: 18px;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.mark {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  background: var(--cyan); color: #031018; border-radius: 12px;
+  font: 800 1.2rem Orbitron, sans-serif; box-shadow: var(--glow);
+}
+.bar h1 {
+  margin: 0; font: 800 clamp(14px, 2.8vw, 22px)/1 Orbitron, sans-serif;
+  letter-spacing: .12em;
+}
+.bar p {
+  margin: 4px 0 0; color: var(--cyan); font-size: 11px; letter-spacing: .18em;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; text-transform: uppercase; font-size: 12px; color: var(--mute);
+  background: #071018; border: 1px solid var(--cyan-dim); border-radius: 999px;
+  box-shadow: var(--neo-in);
+}
+.chip#pill-live.on { color: var(--green); border-color: rgba(45, 255, 138, .45); }
+.cam { min-width: 0; min-height: 280px; }
+.cam-frame {
+  position: relative; height: min(48vh, 480px); min-height: 280px; background: #000;
+  overflow: hidden; border: 2px solid var(--cyan); border-radius: 22px;
+  box-shadow: var(--glow), inset 0 0 50px rgba(0, 0, 0, .65), var(--neo-out);
+}
+.hud-tag {
+  position: absolute; z-index: 2; top: 14px; left: 14px;
+  padding: 5px 12px; background: rgba(0, 0, 0, .8);
+  border: 1px solid var(--cyan); color: var(--cyan); border-radius: 999px;
+  font: 700 10px Orbitron, sans-serif; letter-spacing: .08em;
+}
+.hud-tag.right {
+  left: auto; right: 14px; color: var(--mute); border-color: var(--cyan-dim);
+}
+#feed {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+}
+@media (max-width: 700px) {
+  .cam-frame { height: 42vh; min-height: 260px; }
+}

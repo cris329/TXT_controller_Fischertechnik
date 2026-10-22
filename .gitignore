@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Entorno local
+.env
+*.log
+scripts/wifi_host.txt
+
+# Artefactos de desarrollo (capturas temporales del panel)
+pc/static/_*.png
+pc/static/_title.txt
+
+# Sistema
+Thumbs.db
+.DS_Store
